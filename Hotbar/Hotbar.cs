@@ -1,7 +1,6 @@
 ﻿using ModAPI;
 using ModAPI.Attributes;
 using TheForest.Items;
-using TheForest.UI;
 using TheForest.Utils;
 using UnityEngine;
 
