@@ -10,9 +10,26 @@ Translation for item names is automated.
 
 ## Screenshots
 
-![Ingame UI](https://i.imgur.com/47M3NAi.png)
-![Backpack](https://i.imgur.com/IpPGHUZ.png)
+### Ingame UI - Keyboard and mouse
+
+![Ingame UI - Keyboard and mouse](https://i.imgur.com/0fW4wk8.png)
+
+### Ingame UI - Xbox gamepad
+
+![Ingame UI - Xbox gamepad](https://i.imgur.com/WrJpQRx.png)
+
+### Ingame UI - PS gamepad
+
+![Ingame UI - PS gamepad](https://i.imgur.com/6S1ke3h.png)
+
+### Backpack - Keyboard and mouse
+
+![Backpack - Keyboard and mouse](https://i.imgur.com/b0ra1IF.png)
+
+### Backpack - Gamepad
+
+![Backpack - Keyboard and mouse](https://i.imgur.com/J28GiI0.png)
 
 ## Known Issues
 
-This mod currently supports PC controls only for display.
+None for now. Feel free to tell me when an issue is found.
