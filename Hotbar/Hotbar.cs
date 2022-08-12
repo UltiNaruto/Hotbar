@@ -41,7 +41,7 @@ namespace Hotbar
 
             if (isInGame)
             {
-                GUI.BeginGroup(new Rect((x / 2.0f) - 2f * hotbarRectSize[0], 40f - 0.5f * hotbarRectSize[1], hotbarRectSize[0] * 4f, hotbarRectSize[1]));
+                GUI.BeginGroup(new Rect((x / 2.0f) - 2f * hotbarRectSize[0], y - 40f - 0.5f * hotbarRectSize[1], hotbarRectSize[0] * 4f, hotbarRectSize[1]));
                 GUI.Box(
                     new Rect(0f, 0f, hotbarRectSize[0] * 4f, hotbarRectSize[1]),
                     "",
@@ -51,12 +51,12 @@ namespace Hotbar
                 {
                     item = Equippable_Hotbar_Items[i] ? Hotbar_Items[i] : string.Empty;
                     GUI.Label(
-                        new Rect(i * hotbarRectSize[0], 0f, hotbarRectSize[0], hotbarRectSize[1]),
+                        new Rect(i * hotbarRectSize[0], 0f, hotbarRectSize[0] * 0.9f, hotbarRectSize[1] * 0.9f),
                         $"{i + 1}",
                         labelStyle
                     );
                     GUI.Label(
-                        new Rect(i * hotbarRectSize[0], 30f, hotbarRectSize[0], hotbarRectSize[1]),
+                        new Rect(i * hotbarRectSize[0], 30f, hotbarRectSize[0] * 0.75f, hotbarRectSize[1] * 0.75f),
                         $"{item}", 
                         labelStyle
                     );
@@ -67,7 +67,7 @@ namespace Hotbar
 
         private void Update()
         {
-            int i;
+            int i, amount;
             Item item = null;
             isInGame = !LocalPlayer.IsInPauseMenu &&
                        (LocalPlayer.IsInWorld || LocalPlayer.IsInCaves || LocalPlayer.IsInClosedArea) &&
@@ -80,13 +80,15 @@ namespace Hotbar
                 item = ItemDatabase.ItemById(LocalPlayer.Inventory.QuickSelectItemIds[i]);
                 if (item != null)
                 {
-                    int amount = LocalPlayer.Inventory.AmountOf(LocalPlayer.Inventory.QuickSelectItemIds[i]);
-                    if (amount > 1)
-                        Hotbar_Items[i] = $"{amount} ";
-                    else
-                        Hotbar_Items[i] = string.Empty;
-                    Hotbar_Items[i] += Scene.HudGui.GetItemName(LocalPlayer.Inventory.QuickSelectItemIds[i], amount > 1, false).ToUpperFirstLowerLast();
-                    Equippable_Hotbar_Items[i] = LocalPlayer.Inventory.HasOwned(LocalPlayer.Inventory.QuickSelectItemIds[i]);
+                    Hotbar_Items[i] = string.Empty;
+
+                    amount = LocalPlayer.Inventory.HasOwned(LocalPlayer.Inventory.QuickSelectItemIds[i]) ? LocalPlayer.Inventory.AmountOf(LocalPlayer.Inventory.QuickSelectItemIds[i]) : 0;
+                    if (amount >= 1)
+                    {
+                        if (amount > 1) Hotbar_Items[i] = $"{amount} ";
+                        Hotbar_Items[i] += Scene.HudGui.GetItemName(LocalPlayer.Inventory.QuickSelectItemIds[i], amount > 1, false).ToUpperFirstLowerLast();
+                        Equippable_Hotbar_Items[i] = LocalPlayer.Inventory.HasOwned(LocalPlayer.Inventory.QuickSelectItemIds[i]);
+                    }
                 }
                 else
                 {
