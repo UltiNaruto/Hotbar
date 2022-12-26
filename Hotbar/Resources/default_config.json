@@ -1,0 +1,7 @@
+{
+  "padding": [ "30%", "83%", "30%", "1%" ],
+  "orientation": "horizontal",
+  "show_item_amount": true,
+  "show_item_duration": true,
+  "show_ammo": true
+}

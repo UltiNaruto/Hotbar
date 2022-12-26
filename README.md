@@ -1,35 +1,49 @@
+
+
 # Hotbar for The Forest
 
 ## Description
 
 Remember the hotbar in Minecraft?
 
-This mod does the same with the quick slot items. It technically shows the 4 items in the hotbar that gets created at the top of the screen.
+This mod does the same with the quick slot items. It technically shows the 4 quick select items in the hotbar that gets created where you've set padding.
 
 Translation for item names is automated.
 
+## Config examples
+
+Horizontal hotbar :
+```json
+{
+  "padding": [ "30%", "83%", "30%", "1%" ],
+  "orientation": "horizontal",
+  "show_item_amount": true,
+  "show_item_duration": true,
+  "show_ammo": true
+}
+```
+
+Vertical hotbar :
+```json
+{
+  "padding": [ "83%", "40%", "3%", "40%" ],
+  "orientation": "vertical",
+  "show_item_amount": true,
+  "show_item_duration": true,
+  "show_ammo": true
+}
+```
+
 ## Screenshots
 
-### Ingame UI - Keyboard and mouse
+### Ingame UI - Horizontal
 
-![Ingame UI - Keyboard and mouse](https://i.imgur.com/0fW4wk8.png)
+![Ingame UI - Horizontal](https://I.imgur.com/8Zllg8q.png)
 
-### Ingame UI - Xbox gamepad
+### Ingame UI - Vertical
 
-![Ingame UI - Xbox gamepad](https://i.imgur.com/WrJpQRx.png)
-
-### Ingame UI - PS gamepad
-
-![Ingame UI - PS gamepad](https://i.imgur.com/6S1ke3h.png)
-
-### Backpack - Keyboard and mouse
-
-![Backpack - Keyboard and mouse](https://i.imgur.com/b0ra1IF.png)
-
-### Backpack - Gamepad
-
-![Backpack - Keyboard and mouse](https://i.imgur.com/J28GiI0.png)
+![Ingame UI - Vertical](https://i.imgur.com/I7bxwRh.png)
 
 ## Known Issues
 
-None for now. Feel free to tell me when an issue is found.
+Burnable weapons aren't showing durations of the burnable cloth. This is a planned feature later.
